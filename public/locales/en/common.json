@@ -1,0 +1,94 @@
+{
+  "nav": { "services": "Services", "projects": "Projects", "about": "About", "teams": "Teams", "contact": "Contact", "explore": "Explore Trainings", "findUs": "Find us" },
+  "hero": {
+    "title": "Find the perfect training in Tunisia to advance your career.",
+    "subtitle": "Compare centers, explore certified programs, and choose the best training to reach your goals.",
+    "cta": "Explore Trainings",
+    "ctaSecondary": "View our services"
+  },
+  "about": {
+    "title": "About",
+    "body": "FormationNet is a digital platform designed to simplify access to private training centers in Tunisia. We help learners discover high-quality formations, compare options, and choose the right path for their professional development."
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      { "title": "Web Development", "description": "Modern, scalable web applications tailored to your business." },
+      { "title": "Mobile App Development", "description": "Native and cross-platform apps that delight users." },
+      { "title": "IT Consulting", "description": "Technology strategy and architecture for growth." },
+      { "title": "DevOps & Cloud Solutions", "description": "CI/CD pipelines and cloud infrastructure best practices." },
+      { "title": "Automation & AI Integration", "description": "Automate workflows and integrate AI responsibly." },
+      { "title": "UI/UX & Graphic Design", "description": "Human-centered design for intuitive interfaces and strong visual identity." }
+    ],
+    "cta": "Learn More"
+  },
+  "formationnet": {
+    "title": "Main Project",
+    "name": "FormationNet",
+    "description": "A digital platform that helps people find the right training opportunity based on their specific needs and objectives.",
+    "cta": "Contact us"
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      { "title": "Mobile apps", "description": "Intuitive iOS and Android experiences.", "image":"/assets/projects/mobile.png"},
+      { "title": "Dashboards", "description": "Insightful analytics and dashboards.", "image": "/assets/projects/dashbord.png" },
+      { "title": "Job Hunt Diary", "description": "Track applications and follow-ups in one place.", "link": "https://job-hunt-diary.vercel.app", "image": "/assets/projects/hunt.png" }
+    ]
+  },
+  "teams": { "title": "Teams" },
+  "technologies": { "title": "Technologies" },
+  "partners": {
+    "title": "Partners",
+    "items": [
+      { "name": "Vercel", "logo": "/vercel.svg" },
+      { "name": "Next.js", "logo": "/next.svg" },
+      { "name": "FormationNet", "logo": "/window.svg" },
+      { "name": "Globe", "logo": "/globe.svg" },
+      { "name": "File", "logo": "/file.svg" },
+      { "name": "Partner A", "logo": "/globe.svg" },
+      { "name": "Partner B", "logo": "/file.svg" },
+      { "name": "Partner C", "logo": "/vercel.svg" },
+      { "name": "Partner D", "logo": "/next.svg" },
+      { "name": "Partner E", "logo": "/window.svg" }
+    ]
+  },
+  "trust": {
+    "title": "Trust & Verification",
+    "items": [
+      "Verified information",
+      "Official partners",
+      "Authentic reviews",
+      "Transparent criteria"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "emailLabel": "Email:",
+    "phoneLabel": "Phone:",
+    "social": { "twitter": "Twitter", "linkedin": "LinkedIn", "github": "GitHub" }
+  },
+  "contactForm": {
+    "labels": { "name": "Name", "email": "Email", "message": "Message", "send": "Send" },
+    "messages": { "fill": "Please fill in all fields.", "thank": "Thank you. We will get back to you soon." },
+    "select": {
+      "label": "Project type",
+      "hint": "Use this to separate leads by project type.",
+      "options": [
+        "I'd like to build a web application",
+        "I need a mobile app (iOS/Android)",
+        "I need help with a custom software project",
+        "I'm looking for staff augmentation / dedicated team",
+        "I have a general inquiry",
+        "Careers / Job Application"
+      ]
+    }
+  },
+  "ui": { "menu": "Menu", "appearance": "Appearance", "language": "Language" },
+  "findUs": {
+    "title": "Find us easily",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "contactLabel": "Contact"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "nav": { "services": "Services", "projects": "Projets", "about": "À propos", "teams": "Équipe", "contact": "Contact", "explore": "Explorer les formations", "findUs": "Nous trouver" },
+  "hero": {
+    "title": "Trouvez la formation idéale en Tunisie pour faire avancer votre carrière.",
+    "subtitle": "Comparez les centres, explorez les programmes certifiés et choisissez la meilleure formation pour atteindre vos objectifs.",
+    "cta": "Explorer les formations",
+    "ctaSecondary": "Voir nos services"
+  },
+  "about": {
+    "title": "À propos",
+    "body": "FormationNet est une plateforme numérique conçue pour simplifier l’accès aux centres de formation privés en Tunisie. Nous aidons les apprenants à découvrir des formations de qualité, à comparer les options et à choisir le bon parcours pour leur développement professionnel."
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      { "title": "Développement web", "description": "Applications web modernes et évolutives adaptées à votre entreprise." },
+      { "title": "Développement mobile", "description": "Applications natives et multiplateformes qui ravissent les utilisateurs." },
+      { "title": "Conseil IT", "description": "Stratégie technologique et architecture pour la croissance." },
+      { "title": "DevOps & Cloud", "description": "Pipelines CI/CD et bonnes pratiques d’infrastructure cloud." },
+      { "title": "Automatisation & IA", "description": "Automatisez vos flux et intégrez l’IA de manière responsable." },
+      { "title": "Design graphique & UI/UX", "description": "Design centré utilisateur pour des interfaces intuitives et une identité visuelle forte." }
+    ],
+    "cta": "En savoir plus"
+  },
+  "formationnet": {
+    "title": "Projet principal",
+    "name": "FormationNet",
+    "description": "FormationNet aide les étudiants et les professionnels à trouver facilement des centres de formation fiables en Tunisie grâce à une recherche avancée, des filtres et des informations vérifiées.",
+    "cta": "Nous contacter"
+  },
+  "projects": {
+    "title": "Projets",
+    "items": [
+      { "title": "Applications mobiles", "description": "Expériences intuitives iOS et Android.", "image": "/assets/projects/mobile.png" },
+      { "title": "Tableaux de bord", "description": "Analyses et tableaux de bord éclairants.", "image": "/assets/projects/dashbord.png" },
+      { "title": "Job Hunt Diary", "description": "Suivez vos candidatures, au même endroit.", "link": "https://job-hunt-diary.vercel.app", "image": "/assets/projects/hunt.png" }
+    ]
+  },
+  "teams": { "title": "Équipe" },
+  "technologies": { "title": "Technologies" },
+  "partners": {
+    "title": "Partenaires",
+    "items": [
+      { "name": "Vercel", "logo": "/vercel.svg" },
+      { "name": "Next.js", "logo": "/next.svg" },
+      { "name": "FormationNet", "logo": "/window.svg" },
+      { "name": "Globe", "logo": "/globe.svg" },
+      { "name": "Fichier", "logo": "/file.svg" },
+      { "name": "Partenaire A", "logo": "/globe.svg" },
+      { "name": "Partenaire B", "logo": "/file.svg" },
+      { "name": "Partenaire C", "logo": "/vercel.svg" },
+      { "name": "Partenaire D", "logo": "/next.svg" },
+      { "name": "Partenaire E", "logo": "/window.svg" }
+    ]
+  },
+  "trust": {
+    "title": "Confiance & Vérification",
+    "items": [
+      "Informations vérifiées",
+      "Partenaires officiels",
+      "Avis authentifiés",
+      "Critères transparents"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "emailLabel": "Email :",
+    "phoneLabel": "Téléphone :",
+    "social": { "twitter": "Twitter", "linkedin": "LinkedIn", "github": "GitHub" }
+  },
+  "contactForm": {
+    "labels": { "name": "Nom", "email": "Email", "message": "Message", "send": "Envoyer" },
+    "messages": { "fill": "Veuillez remplir tous les champs.", "thank": "Merci. Nous vous répondrons bientôt." },
+    "select": {
+      "label": "Type de projet",
+      "hint": "Utilisez ceci pour catégoriser les prospects par type de projet.",
+      "options": [
+        "Je souhaite créer une application web",
+        "J’ai besoin d’une application mobile (iOS/Android)",
+        "J’ai besoin d’aide pour un projet logiciel sur mesure",
+        "Je cherche du renfort d’équipe / une équipe dédiée",
+        "J’ai une question générale",
+        "Carrières / Candidature"
+      ]
+    }
+  },
+  "ui": { "menu": "Menu", "appearance": "Apparence", "language": "Langue" },
+  "findUs": {
+    "title": "Nous trouver facilement",
+    "addressLabel": "Adresse",
+    "phoneLabel": "Téléphone",
+    "contactLabel": "Contact"
+  }
+}

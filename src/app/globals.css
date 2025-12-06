@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --surface: #ffffff;
+  --card: #fafafa;
+  --muted: #4b5563;
+  --border: rgba(0,0,0,0.1);
+  --accent: #4f46e5;
+  --accent-foreground: #ffffff;
+  --navbar-bg: #ffffffcc;
+  --navbar-border: rgba(0,0,0,0.12);
+  --navbar-link: #0f172a;
+  --navbar-hover: #4f46e5;
+  --navbar-icon: #334155;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+    --surface: #0a0a0a;
+    --card: rgba(255,255,255,0.08);
+    --muted: #a1a1aa;
+    --border: rgba(255,255,255,0.15);
+    --accent: #6366f1;
+    --accent-foreground: #0a0a0a;
+    --navbar-bg: #121212e6;
+    --navbar-border: rgba(255,255,255,0.12);
+    --navbar-link: #e5e7eb;
+    --navbar-hover: #a5b4fc;
+    --navbar-icon: #cbd5e1;
+  }
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --surface: #0a0a0a;
+  --card: rgba(255,255,255,0.08);
+  --muted: #a1a1aa;
+  --border: rgba(255,255,255,0.15);
+  --accent: #6366f1;
+  --accent-foreground: #0a0a0a;
+  --navbar-bg: #121212e6;
+  --navbar-border: rgba(255,255,255,0.12);
+  --navbar-link: #e5e7eb;
+  --navbar-hover: #a5b4fc;
+  --navbar-icon: #cbd5e1;
+}
+
+html { scroll-behavior: smooth; color-scheme: light dark }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+* {
+  transition: background-color 200ms, color 200ms, border-color 200ms, opacity 200ms, transform 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+.animate-fade-in { animation: fade-in 300ms ease-out both; }
+.animate-slide-up { animation: slide-up 300ms ease-out both; }
+.marquee { animation: marquee 30s linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(8px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
