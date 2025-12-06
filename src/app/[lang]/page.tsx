@@ -24,10 +24,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <FormationNetSection t={t} />
       <FindUsSection t={t} />
       <ProjectsSection t={t} />
-      <TeamsSection t={t} />
+      {/*<TeamsSection t={t} />*/}
       <TechnologiesSection t={t} />
       <TrustSection t={t} />
-      <PartnersSection t={t} />
+      {/* <PartnersSection t={t} />*/}
       <StatsSection t={t} />
       <ContactSection t={t} />
     </div>
