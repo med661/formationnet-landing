@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: {
     languages: {
-      en: "https://formationnet.tn/en",
-      fr: "https://formationnet.tn/fr",
+      en: "https://formationnet-landing.vercel.app/en",
+      fr: "https://formationnet-landing.vercel.app/fr",
     },
   },
   openGraph: {
@@ -76,7 +76,7 @@ export default async function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "FormationNet",
-              url: "https://formationnet.tn",
+              url: "https://formationnet-landing.vercel.app",
               sameAs: ["https://twitter.com/", "https://www.linkedin.com/", "https://github.com/"],
               logo: "https://formationnet.tn/next.svg",
             }),
