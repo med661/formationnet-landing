@@ -38,3 +38,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # formationnt-landing
 # formationnt-landing
 # formationnt-landing
+
+
+
+{ "title": "Mobile apps", "description": "Intuitive iOS and Android experiences.", "image":"/assets/projects/mobile.png"},
+
+      { "title": "Tableaux de bord", "description": "Analyses et tableaux de bord éclairants.", "image": "/assets/projects/dashbord.png" },
+
