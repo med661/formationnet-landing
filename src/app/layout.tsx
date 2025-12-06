@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://formationnet.tn"),
+  metadataBase: new URL("https://formationnet-landing.vercel.app"),
   title: "FormationNet — Find the perfect training program",
   description:
     "FormationNet helps learners discover trusted training centers in Tunisia with advanced search, filters, and verified information.",
