@@ -45,3 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
       { "title": "Tableaux de bord", "description": "Analyses et tableaux de bord éclairants.", "image": "/assets/projects/dashbord.png" },
 
+
+ "teams": "Équipe",
+ "teams":"teams"."

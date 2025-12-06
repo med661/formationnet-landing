@@ -1,5 +1,5 @@
 {
-  "nav": { "services": "Services", "projects": "Projects", "about": "About", "teams": "Teams", "contact": "Contact", "explore": "Explore Trainings", "findUs": "Find us" },
+  "nav": { "services": "Services", "projects": "Projects", "about": "About",  "contact": "Contact", "explore": "Explore Trainings", "findUs": "Find us" },
   "hero": {
     "title": "Find the perfect training in Tunisia to advance your career.",
     "subtitle": "Compare centers, explore certified programs, and choose the best training to reach your goals.",
