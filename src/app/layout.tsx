@@ -6,7 +6,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 import MobileNav from "@/components/MobileNav";
 import { getDict } from "@/i18n";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const inter = Inter({
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "FormationNet — Find the perfect training program",
   description:
     "FormationNet helps learners discover trusted training centers in Tunisia with advanced search, filters, and verified information.",
-  icons: { icon: "/next.svg" },
+  icons: { icon: "/next.svg", apple: "/next.svg" },
   robots: { index: true, follow: true },
   alternates: {
     languages: {
@@ -175,9 +175,27 @@ export default async function RootLayout({
               </div>
               <div className="flex lg:justify-end">
                 <div className="flex items-center gap-3">
-                  <a href="#" aria-label="Twitter" className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"><FaXTwitter size={16} /></a>
-                  <a href="#" aria-label="LinkedIn" className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"><FaLinkedin size={16} /></a>
-                  <a href="#" aria-label="GitHub" className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"><FaGithub size={16} /></a>
+                  <a
+                    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fformationnet-landing.vercel.app&text=FormationNet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter share"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
+                  ><FaXTwitter size={16} /></a>
+                  <a
+                    href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fformationnet-landing.vercel.app&title=FormationNet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn share"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
+                  ><FaLinkedin size={16} /></a>
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fformationnet-landing.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook share"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
+                  ><FaFacebook size={16} /></a>
                 </div>
               </div>
             </div>
