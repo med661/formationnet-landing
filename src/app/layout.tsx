@@ -6,7 +6,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 import MobileNav from "@/components/MobileNav";
 import { getDict } from "@/i18n";
-import PageTransition from "@/components/PageTransition";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -102,22 +101,21 @@ export default async function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "(() => { try { const params = new URLSearchParams(window.location.search); const q = (params.get('q')||'').toLowerCase(); if (!q) return; const map = [ { k: ['service','services'], id: '#services' }, { k: ['project','projects'], id: '#projects' }, { k: ['formationnet','formation','training'], id: '#formationnet' }, { k: ['contact'], id: '#contact' } ]; const match = map.find(m => m.k.some(s => q.includes(s))); const target = match ? match.id : '#home'; const el = document.querySelector(target); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', target); } } catch {} })();",
+              "(() => { try { const params = new URLSearchParams(window.location.search); const q = (params.get('q')||'').toLowerCase(); const sent = params.get('sent'); if (sent === '1') { const ok = document.getElementById('contact-success'); if (ok) { ok.classList.remove('hidden'); } } if (!q) return; const map = [ { k: ['about'], id: '#about' }, { k: ['service','services'], id: '#services' }, { k: ['project','projects','formationnet','formation','training'], id: '#projects' }, { k: ['find','find-us','location','address'], id: '#find-us' }, { k: ['contact'], id: '#contact' } ]; const match = map.find(m => m.k.some(s => q.includes(s))); const target = match ? match.id : '#home'; const el = document.querySelector(target); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', target); } } catch {} })();",
           }}
         />
       </head>
       <body className={`${inter.variable} antialiased min-h-screen bg-background text-foreground`}>        
-        <header className="fixed inset-x-0 top-0 z-50 bg-[var(--navbar-bg)] border-b border-[var(--navbar-border)] backdrop-blur supports-[backdrop-filter]:bg-[var(--navbar-bg)]">
+        <header className="fixed inset-x-0 top-0 z-50 bg-[var(--navbar-bg)] border-b border-[var(--navbar-border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <Link href="#home" className="text-sm font-semibold tracking-tight text-[var(--navbar-link)]">FormationNet</Link>
               <nav className="hidden gap-6 text-sm font-medium lg:flex" role="navigation" aria-label="Primary">
+                <Link href="#about" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.about}</Link>
                 <Link href="#services" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.services}</Link>
                 <Link href="#projects" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.projects}</Link>
-                <Link href="#about" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.about}</Link>
-             {/*  <Link href="#teams" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.teams}</Link>*/}
-                <Link href="#contact" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.contact}</Link>
                 <Link href="#find-us" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.findUs}</Link>
+                <Link href="#contact" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.contact}</Link>
               </nav>
               <div className="flex items-center gap-3">
                 <MobileNav
@@ -149,7 +147,7 @@ export default async function RootLayout({
           </div>
         </header>
         <main className="pt-16">
-          <PageTransition>{children}</PageTransition>
+          {children}
         </main>
         <footer className="mt-24 border-t border-[var(--border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">

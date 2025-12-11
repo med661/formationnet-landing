@@ -67,11 +67,11 @@ export default function MobileNav({ labels, panel }: { labels: { services: strin
               </button>
             </div>
             <ul className="mt-4 grid gap-4 text-sm">
+              <li><Link href="#about" onClick={close}>{labels.about}</Link></li>
               <li><Link href="#services" onClick={close}>{labels.services}</Link></li>
               <li><Link href="#projects" onClick={close}>{labels.projects}</Link></li>
-              <li><Link href="#about" onClick={close}>{labels.about}</Link></li>
-              <li><Link href="#contact" onClick={close}>{labels.contact}</Link></li>
               <li><Link href="#find-us" onClick={close}>{labels.findUs}</Link></li>
+              <li><Link href="#contact" onClick={close}>{labels.contact}</Link></li>
             </ul>
             <div className="mt-6 flex items-center justify-between">
               <span className="text-sm">{panel.appearance}</span>

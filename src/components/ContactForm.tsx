@@ -19,6 +19,8 @@ export default function ContactForm({ labels, select }: { labels: Labels; select
       <input type="hidden" name="_subject" value="FormationNet Contact" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://formationnet-landing.vercel.app/thank-you?return=/#contact" />
+      <input type="hidden" name="_next" value="https://formationnet-landing.vercel.app/?sent=1#contact" />
       <div className="grid gap-5">
         <div>
           <label htmlFor="topic" className="text-xs font-medium">{select.label}</label>

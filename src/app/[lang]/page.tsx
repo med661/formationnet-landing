@@ -3,7 +3,6 @@ import { Translations } from "@/types/i18n";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import FormationNetSection from "@/components/sections/FormationNetSection";
 import FindUsSection from "@/components/sections/FindUsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import TeamsSection from "@/components/sections/TeamsSection";
@@ -21,9 +20,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <HeroSection t={t} />
       <AboutSection t={t} />
       <ServicesSection t={t} />
-      <FormationNetSection t={t} />
-      <FindUsSection t={t} />
       <ProjectsSection t={t} />
+      <FindUsSection t={t} />
       {/*<TeamsSection t={t} />*/}
       <TechnologiesSection t={t} />
       <TrustSection t={t} />

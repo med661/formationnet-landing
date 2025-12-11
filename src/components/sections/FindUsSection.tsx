@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import { LuPhoneCall ,LuMail ,LuMapPin } from "react-icons/lu";
 import { Translations } from "@/types/i18n";
 
 export default function FindUsSection({ t }: { t: Translations }) {
@@ -9,17 +10,19 @@ export default function FindUsSection({ t }: { t: Translations }) {
       </Reveal>
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
         <Reveal>
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6">
+        <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6">
             <div>
-              <p className="text-sm font-semibold">{t.findUs.addressLabel}</p>
+              <p className="text-sm font-semibold flex items-center gap-2"><span className="text-[var(--navbar-icon)]" aria-hidden><LuMapPin size={16} /></span>{t.findUs.addressLabel}</p>
               <p className="mt-1 text-[var(--muted)]">10 RUE DE PENTHIEVRE 75008 PARIS</p>
             </div>
             <div className="mt-6">
-              <p className="text-sm font-semibold">{t.findUs.phoneLabel}</p>
-              <a href="tel:+21655962808" className="mt-1 inline-block text-[var(--navbar-link)] hover:text-[var(--accent)]">+21 (6) 55962808</a>
+              <p className="text-sm font-semibold flex items-center gap-2"><span className="text-[var(--navbar-icon)]" aria-hidden><LuPhoneCall size={16} /></span>{t.findUs.phoneLabel}</p>
+              <div className="mt-1">
+                <a href="tel:+21655962808" className="inline-block text-[var(--navbar-link)] hover:text-[var(--accent)]">+216 55 962 808</a>
+              </div>
             </div>
             <div className="mt-6">
-              <p className="text-sm font-semibold">{t.findUs.contactLabel}</p>
+              <p className="text-sm font-semibold flex items-center gap-2"><span className="text-[var(--navbar-icon)]" aria-hidden><LuMail size={16} /></span>{t.findUs.contactLabel}</p>
               <div className="mt-1 space-y-1">
                 <a href="mailto:formationnettn@gmail.com" className="block text-[var(--navbar-link)] hover:text-[var(--accent)]">formationnettn@gmail.com</a>
               </div>
