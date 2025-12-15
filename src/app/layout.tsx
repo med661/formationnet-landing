@@ -183,14 +183,14 @@ export default async function RootLayout({
                     className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
                   ><FaXTwitter size={16} /></a>
                   <a
-                    href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fformationnet-landing.vercel.app&title=FormationNet"
+                    href="https://www.linkedin.com/company/75032139/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn share"
                     className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--navbar-icon)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
                   ><FaLinkedin size={16} /></a>
                   <a
-                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fformationnet-landing.vercel.app"
+                    href="https://www.facebook.com/people/Formationnet/100053445207314/#"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook share"
