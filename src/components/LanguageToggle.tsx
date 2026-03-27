@@ -8,14 +8,14 @@ export default function LanguageToggle({ variant = "popover" }: { variant?: "inl
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
-  function getSnapshot(): "en" | "fr" {
+  function getSnapshot(): "en" | "fr" | "ar" {
     if (typeof document === "undefined") return "en";
-    const fromCookie = document.cookie.match(/(?:^|; )lang=(en|fr)/)?.[1] as "en" | "fr" | undefined;
+    const fromCookie = document.cookie.match(/(?:^|; )lang=(en|fr|ar)/)?.[1] as "en" | "fr" | "ar" | undefined;
     if (fromCookie) return fromCookie;
     const seg = typeof location !== "undefined" ? location.pathname.split("/")[1] : "";
-    return (seg === "fr" ? "fr" : "en");
+    return (seg === "fr" || seg === "ar" ? seg : "en") as "en" | "fr" | "ar";
   }
-  function getServerSnapshot(): "en" | "fr" {
+  function getServerSnapshot(): "en" | "fr" | "ar" {
     return "en";
   }
   function subscribe(cb: () => void) {
@@ -30,7 +30,7 @@ export default function LanguageToggle({ variant = "popover" }: { variant?: "inl
   }
   const lang = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-  function setLanguage(code: "en" | "fr") {
+  function setLanguage(code: "en" | "fr" | "ar") {
     const oneYear = 365 * 24 * 60 * 60 * 1000;
     const expires = new Date(Date.now() + oneYear).toUTCString();
     try {
@@ -74,11 +74,19 @@ export default function LanguageToggle({ variant = "popover" }: { variant?: "inl
         </button>
         <button
           type="button"
-          aria-pressed={!isEn}
+          aria-pressed={lang === "fr"}
           onClick={() => setLanguage("fr")}
-          className={`rounded-full border border-black/10 dark:border-white/15 px-3 py-2 text-sm transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none ${!isEn ? "bg-[var(--accent)] text-[var(--accent-foreground)]" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
+          className={`rounded-full border border-black/10 dark:border-white/15 px-3 py-2 text-sm transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none ${lang === "fr" ? "bg-[var(--accent)] text-[var(--accent-foreground)]" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
         >
           FR
+        </button>
+        <button
+          type="button"
+          aria-pressed={lang === "ar"}
+          onClick={() => setLanguage("ar")}
+          className={`rounded-full border border-black/10 dark:border-white/15 px-3 py-2 text-sm transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none ${lang === "ar" ? "bg-[var(--accent)] text-[var(--accent-foreground)]" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
+        >
+          AR
         </button>
       </div>
     );
@@ -109,15 +117,23 @@ export default function LanguageToggle({ variant = "popover" }: { variant?: "inl
               onClick={() => setLanguage("en")}
               className={`rounded-md px-3 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none ${isEn ? "bg-[var(--accent)] text-[var(--accent-foreground)]" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
             >
-              EN
+              English
             </button>
             <button
               type="button"
-              aria-pressed={!isEn}
+              aria-pressed={lang === "fr"}
               onClick={() => setLanguage("fr")}
-              className={`rounded-md px-3 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none ${!isEn ? "bg-[var(--accent)] text-[var(--accent-foreground)]" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
+              className={`rounded-md px-3 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none ${lang === "fr" ? "bg-[var(--accent)] text-[var(--accent-foreground)]" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
             >
-              FR
+              Français
+            </button>
+            <button
+              type="button"
+              aria-pressed={lang === "ar"}
+              onClick={() => setLanguage("ar")}
+              className={`rounded-md px-3 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none ${lang === "ar" ? "bg-[var(--accent)] text-[var(--accent-foreground)]" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
+            >
+              العربية
             </button>
           </div>
         </div>

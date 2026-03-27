@@ -31,6 +31,7 @@
   "projects": {
     "title": "Projects",
     "items": [
+      { "title": "E-Commerce", "description": "Full-featured online store with cart, payments, and inventory management.", "image": "/assets/projects/ecommerce.png" },
       { "title": "Dashboards", "description": "Insightful analytics and dashboards.", "image": "/assets/projects/dashbord.png" },
       { "title": "Job Hunt Diary", "description": "Track applications and follow-ups in one place.", "link": "https://job-hunt-diary.vercel.app", "image": "/assets/projects/hunt.png" }
     ]

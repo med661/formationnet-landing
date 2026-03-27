@@ -31,6 +31,7 @@
   "projects": {
     "title": "Projets",
     "items": [
+      { "title": "E-Commerce", "description": "Boutique en ligne complète avec panier, paiements et gestion des stocks.", "image": "/assets/projects/ecommerce.png" },
       { "title": "Tableaux de bord", "description": "Analyses et tableaux de bord éclairants.", "image": "/assets/projects/dashbord.png" },
       { "title": "Job Hunt Diary", "description": "Suivez vos candidatures, au même endroit.", "link": "https://job-hunt-diary.vercel.app", "image": "/assets/projects/hunt.png" }
     ]

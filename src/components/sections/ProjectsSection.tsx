@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Translations } from "@/types/i18n";
 import ProjectCard from "@/components/cards/ProjectCard";
 
-const projectImages = ["/globe.svg", "/file.svg", "/window.svg", "/vercel.svg", "/next.svg", "/assets/projects/hunt.png"];
+const projectImages = ["/assets/projects/ecommerce.png", "/globe.svg", "/file.svg", "/window.svg", "/vercel.svg", "/next.svg", "/assets/projects/hunt.png"];
 
 export default function ProjectsSection({ t }: { t: Translations }) {
   return (

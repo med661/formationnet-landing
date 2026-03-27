@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import "./globals.css";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -17,38 +18,92 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://formationnet-landing.vercel.app"),
-  title: "FormationNet — Find the perfect training program",
+  title: {
+    default: "FormationNet — Find the perfect training program",
+    template: "%s | FormationNet",
+  },
   description:
-    "FormationNet helps learners discover trusted training centers in Tunisia with advanced search, filters, and verified information.",
-  icons: { icon: "/next.svg", apple: "/next.svg" },
-  robots: { index: true, follow: true },
+    "FormationNet helps learners discover trusted training centers in Tunisia with advanced search, filters, and verified information. Compare centers, explore certified programs, and choose the best training to reach your career goals.",
+  keywords: [
+    "formation Tunisia",
+    "training center Tunisia",
+    "développement professionnel",
+    "formation professionnelle",
+    "études Tunisia",
+    "formations certifiées",
+    "FormationNet",
+    "career development",
+    "professional training",
+  ],
+  authors: [{ name: "FormationNet" }],
+  creator: "FormationNet",
+  publisher: "FormationNet",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: ["/next.svg", "/favicon.ico"],
+    apple: ["/next.svg"],
+    shortcut: ["/next.svg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
+    canonical: "https://formationnet-landing.vercel.app",
     languages: {
       en: "https://formationnet-landing.vercel.app/en",
       fr: "https://formationnet-landing.vercel.app/fr",
+      ar: "https://formationnet-landing.vercel.app/ar",
     },
   },
   openGraph: {
-    title: "FormationNet — Find the perfect training program",
-    description:
-      "Discover high-quality formations, compare options, and choose the right path for your career in Tunisia.",
-    url: "https://formationnet.tn",
-    siteName: "FormationNet",
-    images: [{ url: "/next.svg", width: 1200, height: 630, alt: "FormationNet" }],
-    locale: "en_US",
     type: "website",
+    locale: "en_US",
+    alternateLocale: ["fr_FR", "ar"],
+    url: "https://formationnet-landing.vercel.app",
+    siteName: "FormationNet",
+    title: "FormationNet — Find the perfect training program in Tunisia",
+    description:
+      "Discover high-quality formations, compare options, and choose the right path for your career in Tunisia. Trusted training centers with verified information.",
+    images: [
+      {
+        url: "/next.svg",
+        width: 1200,
+        height: 630,
+        alt: "FormationNet - Training Centers in Tunisia",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "FormationNet — Find the perfect training program",
     description:
       "Discover high-quality formations, compare options, and choose the right path for your career in Tunisia.",
+    creator: "@formationnet",
     images: ["/next.svg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#0a0a0a" }, { color: "#ffffff" }],
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { color: "#ffffff" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default async function RootLayout({
@@ -57,8 +112,13 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const t = await getDict();
+  const cookieStore = await cookies();
+  const langCookie = cookieStore.get("lang")?.value;
+  const currentLang = langCookie === "ar" ? "ar" : langCookie === "fr" ? "fr" : "en";
+  const isRtl = currentLang === "ar";
+
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang={currentLang} dir={isRtl ? "rtl" : "ltr"} className={`h-full ${isRtl ? "rtl" : "ltr"}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -76,8 +136,18 @@ export default async function RootLayout({
               "@type": "Organization",
               name: "FormationNet",
               url: "https://formationnet-landing.vercel.app",
-              sameAs: ["https://twitter.com/", "https://www.linkedin.com/", "https://github.com/"],
               logo: "https://formationnet.tn/next.svg",
+              description: "FormationNet helps learners discover trusted training centers in Tunisia with advanced search, filters, and verified information.",
+              sameAs: [
+                "https://twitter.com/formationnet",
+                "https://www.linkedin.com/company/75032139/",
+                "https://www.facebook.com/people/Formationnet/100053445207314/"
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "formationnettn@gmail.com",
+                contactType: "customer service"
+              }
             }),
           }}
         />
@@ -89,12 +159,35 @@ export default async function RootLayout({
               "@type": "WebSite",
               name: "FormationNet",
               url: "https://formationnet.tn",
-              inLanguage: "en",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://formationnet.tn/?q={search_term}",
-                "query-input": "required name=search_term",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://formationnet.tn/?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "FormationNet - Training Centers in Tunisia",
+              description: "Find the perfect training program in Tunisia. Compare centers, explore certified programs, and choose the best training to reach your career goals.",
+              url: "https://formationnet-landing.vercel.app",
+              mainEntity: {
+                "@type": "WebSite",
+                name: "FormationNet"
               },
+              about: {
+                "@type": "Thing",
+                name: "Professional Training",
+                description: "Professional development and career training programs in Tunisia"
+              }
             }),
           }}
         />
@@ -111,11 +204,11 @@ export default async function RootLayout({
             <div className="flex h-16 items-center justify-between">
               <Link href="#home" className="text-sm font-semibold tracking-tight text-[var(--navbar-link)]">FormationNet</Link>
               <nav className="hidden gap-6 text-sm font-medium lg:flex" role="navigation" aria-label="Primary">
-                <Link href="#about" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.about}</Link>
-                <Link href="#services" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.services}</Link>
-                <Link href="#projects" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.projects}</Link>
-                <Link href="#find-us" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.findUs}</Link>
-                <Link href="#contact" className="text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.contact}</Link>
+                <Link href="#about" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.about}</Link>
+                <Link href="#services" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.services}</Link>
+                <Link href="#projects" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.projects}</Link>
+                <Link href="#find-us" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.findUs}</Link>
+                <Link href="#contact" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.contact}</Link>
               </nav>
               <div className="flex items-center gap-3">
                 <MobileNav
@@ -160,16 +253,16 @@ export default async function RootLayout({
                 <div>
                   <p className="text-xs font-semibold tracking-wide text-[var(--muted)]">Site</p>
                   <ul className="mt-3 space-y-2 text-sm">
-                    <li><Link href="#services" className="text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.services}</Link></li>
-                    <li><Link href="#projects" className="text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.projects}</Link></li>
-                    <li><Link href="#about" className="text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.about}</Link></li>
+                    <li><Link href="#services" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.services}</Link></li>
+                    <li><Link href="#projects" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.projects}</Link></li>
+                    <li><Link href="#about" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.about}</Link></li>
                   </ul>
                 </div>
                 <div>
                   <p className="text-xs font-semibold tracking-wide text-[var(--muted)]">Company</p>
                   <ul className="mt-3 space-y-2 text-sm">
-                    <li><Link href="#teams" className="text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.teams}</Link></li>
-                    <li><Link href="#contact" className="text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.contact}</Link></li>
+                    <li><Link href="#teams" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.teams}</Link></li>
+                    <li><Link href="#contact" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.contact}</Link></li>
                   </ul>
                 </div>
               </div>
@@ -201,7 +294,7 @@ export default async function RootLayout({
             </div>
             <div className="mt-10 flex items-center justify-between border-t border-[var(--border)] pt-6 text-xs text-[var(--muted)]">
               <p>© FormationNet</p>
-              <Link href="#home" className="hover:text-[var(--accent)]">Back to top</Link>
+              <Link href="#home" className="nav-link hover:text-[var(--accent)]">Back to top</Link>
             </div>
           </div>
         </footer>

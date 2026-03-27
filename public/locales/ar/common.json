@@ -1,0 +1,94 @@
+{
+  "nav": { "services": "الخدمات", "projects": "المشاريع", "about": "من نحن", "teams": "الفريق", "contact": "اتصل بنا", "explore": "استكشف التدريبات", "findUs": "اعثر علينا" },
+  "hero": {
+    "title": "ابحث عن التدريب المثالي في تونس لتطوير مسيرتك المهنية",
+    "subtitle": "قارن بين المراكز واستكشف البرامج المعتمدة واختر أفضل تدريب لتحقيق أهدافك",
+    "cta": "استكشف التدريبات",
+    "ctaSecondary": "عرض خدماتنا"
+  },
+  "about": {
+    "title": "من نحن",
+    "body": "FormationNet هي منصة رقمية مصممة لتبسيط الوصول إلى مراكز التدريب الخاصة في تونس. نساعد المتعلمين على اكتشاف تدريبات عالية الجودة ومقارنة الخيارات واختيار المسار الصحيح لتطويرهم المهني."
+  },
+  "services": {
+    "title": "الخدمات",
+    "items": [
+      { "title": "تطوير الويب", "description": "تطبيقات ويب حديثة وقابلة للتطوير مصممة لاحتياجات عملك." },
+      { "title": "تطوير تطبيقات الهاتف", "description": "تطبيقات أصلية وعبر المنصات تلبي احتياجات المستخدمين." },
+      { "title": "استشارات تقنية", "description": "استراتيجية تكنولوجيا وهندسة للنمو." },
+      { "title": "DevOps والسحابة", "description": "خطوط CI/CD وأفضل ممارسات البنية التحتية السحابية." },
+      { "title": "الأتمتة وتكامل الذكاء الاصطناعي", "description": "أتمتة سير العمل وتكامل الذكاء الاصطناعي بشكل مسؤول." },
+      { "title": "التصميم UX/UI والتصميم الجرافيكي", "description": "تصميم مركز على المستخدم لواجهات بصرية سهلة وقوية." }
+    ],
+    "cta": "اعرف المزيد"
+  },
+  "formationnet": {
+    "title": "المشروع الرئيسي",
+    "name": "FormationNet",
+    "description": "منصة رقمية تساعد الأشخاص على إيجاد فرصة التدريب المناسبة بناءً على احتياجاتهم وأهدافهم المحددة.",
+    "cta": "اتصل بنا"
+  },
+  "projects": {
+    "title": "المشاريع",
+    "items": [
+      { "title": "تجارة إلكترونية", "description": "متجر إلكتروني كامل الميزات مع سلة تسوق ومدفوعات وإدارة مخزون.", "image": "/assets/projects/ecommerce.png" },
+      { "title": "لوحات التحكم", "description": "تحليلات ورسوم بيانية ثاقبة.", "image": "/assets/projects/dashbord.png" },
+      { "title": "Job Hunt Diary", "description": "تتبع طلباتك ومتابعاتك في مكان واحد.", "link": "https://job-hunt-diary.vercel.app", "image": "/assets/projects/hunt.png" }
+    ]
+  },
+  "teams": { "title": "الفريق" },
+  "technologies": { "title": "التقنيات" },
+  "partners": {
+    "title": "الشركاء",
+    "items": [
+      { "name": "Vercel", "logo": "/vercel.svg" },
+      { "name": "Next.js", "logo": "/next.svg" },
+      { "name": "FormationNet", "logo": "/window.svg" },
+      { "name": "Globe", "logo": "/globe.svg" },
+      { "name": "File", "logo": "/file.svg" },
+      { "name": "Partner A", "logo": "/globe.svg" },
+      { "name": "Partner B", "logo": "/file.svg" },
+      { "name": "Partner C", "logo": "/vercel.svg" },
+      { "name": "Partner D", "logo": "/next.svg" },
+      { "name": "Partner E", "logo": "/window.svg" }
+    ]
+  },
+  "trust": {
+    "title": "الثقة والتحقق",
+    "items": [
+      "معلومات موثقة",
+      "شركاء رسميون",
+      "آراء أصيلة",
+      "معايير شفافة"
+    ]
+  },
+  "contact": {
+    "title": "اتصل بنا",
+    "emailLabel": "البريد الإلكتروني:",
+    "phoneLabel": "الهاتف:",
+    "social": { "twitter": "Twitter", "linkedin": "LinkedIn", "github": "GitHub" }
+  },
+  "contactForm": {
+    "labels": { "name": "الاسم", "email": "البريد الإلكتروني", "message": "الرسالة", "send": "إرسال" },
+    "messages": { "fill": "يرجى ملء جميع الحقول.", "thank": "شكراً لك. سنتواصل معك قريباً." },
+    "select": {
+      "label": "نوع المشروع",
+      "hint": "Use this to separate leads by project type.",
+      "options": [
+        "أريد بناء تطبيق ويب",
+        "أحتاج تطبيق جوال (iOS/Android)",
+        "أحتاج مساعدة في مشروع برمجي مخصص",
+        "أبحث عن تعزيز الفريق / فريق مخصص",
+        "لدي استعلام عام",
+        "وظائف / طلب توظيف"
+      ]
+    }
+  },
+  "ui": { "menu": "القائمة", "appearance": "المظهر", "language": "اللغة" },
+  "findUs": {
+    "title": "اعثر علينا بسهولة",
+    "addressLabel": "العنوان",
+    "phoneLabel": "الهاتف",
+    "contactLabel": "الاتصال"
+  }
+}

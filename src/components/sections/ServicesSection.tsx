@@ -21,12 +21,18 @@ export default function ServicesSection({ t }: { t: Translations }) {
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {t.services.items.map((s, i) => (
           <Reveal key={s.title} delay={i * 80}>
-            <div className="rounded-2xl border border-[var(--border)] p-6 bg-[var(--card)] transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:shadow-lg motion-reduce:transition-none h-full flex flex-col">
-              <div className="mb-4 h-10 w-10 rounded-lg bg-[var(--accent)]/15 text-[var(--accent)] flex items-center justify-center">{serviceIcons[i]}</div>
-              <h3 className="text-xl font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm text-[var(--muted)]">{s.description}</p>
+            <div className="group relative rounded-2xl border border-[var(--border)] p-6 bg-[var(--card)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl hover:shadow-indigo-500/10 motion-reduce:transition-none h-full flex flex-col overflow-hidden">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative">
+                <div className="mb-4 h-12 w-12 rounded-xl bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent)]/5 text-[var(--accent)] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[var(--accent)]/20">
+                  {serviceIcons[i]}
+                </div>
+                <h3 className="text-xl font-semibold group-hover:text-[var(--accent)] transition-colors duration-300">{s.title}</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">{s.description}</p>
+              </div>
               <div className="mt-auto pt-4">
-                <Link href="#contact" className="inline-flex items-center justify-center rounded-full border border-[var(--border)] px-4 py-2 text-sm transition hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.services.cta}</Link>
+                <Link href="#contact" className="inline-flex items-center justify-center rounded-full border border-[var(--border)] px-4 py-2 text-sm transition-all duration-300 hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] hover:border-[var(--accent)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.services.cta}</Link>
               </div>
             </div>
           </Reveal>

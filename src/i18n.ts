@@ -1,4 +1,4 @@
-export type Locale = "en" | "fr";
+export type Locale = "en" | "fr" | "ar";
 
 type Dict = {
   nav: { services: string; projects: string; about: string; teams: string; contact: string; explore: string; findUs: string };
@@ -32,14 +32,15 @@ function readLocale(lang: Locale, ns: string = "common"): Dict {
 
 const en = readLocale("en", "common");
 const fr = readLocale("fr", "common");
+const ar = readLocale("ar", "common");
 
-export const dict: Record<Locale, Dict> = { en, fr };
+export const dict: Record<Locale, Dict> = { en, fr, ar };
 
 export async function getDict(lang?: string): Promise<Dict> {
   try {
     const jar = await cookies();
     const fromCookie = jar.get("lang")?.value as Locale | undefined;
-    if (fromCookie && (fromCookie === "en" || fromCookie === "fr")) {
+    if (fromCookie && (fromCookie === "en" || fromCookie === "fr" || fromCookie === "ar")) {
       return dict[fromCookie];
     }
   } catch {}
