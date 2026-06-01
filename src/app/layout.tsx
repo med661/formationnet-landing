@@ -9,7 +9,7 @@ import MobileNav from "@/components/MobileNav";
 import ScrollProgress from "@/components/ScrollProgress";
 import StickyContactCta from "@/components/StickyContactCta";
 import { getDict } from "@/i18n";
-import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const inter = Inter({
