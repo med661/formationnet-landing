@@ -8,10 +8,12 @@
   },
   "about": {
     "title": "À propos",
+    "subtitle": "Votre porte d'accès à la formation professionnelle en Tunisie.",
     "body": "FormationNet est une plateforme numérique conçue pour simplifier l’accès aux centres de formation privés en Tunisie. Nous aidons les apprenants à découvrir des formations de qualité, à comparer les options et à choisir le bon parcours pour leur développement professionnel."
   },
   "services": {
     "title": "Services",
+    "subtitle": "Des solutions numériques de bout en bout, de l'idée au lancement.",
     "items": [
       { "title": "Développement web", "description": "Applications web modernes et évolutives adaptées à votre entreprise." },
       { "title": "Développement mobile", "description": "Applications natives et multiplateformes qui ravissent les utilisateurs." },
@@ -22,22 +24,11 @@
     ],
     "cta": "En savoir plus"
   },
-  "formationnet": {
-    "title": "Projet principal",
-    "name": "FormationNet",
-    "description": "FormationNet aide les étudiants et les professionnels à trouver facilement des centres de formation fiables en Tunisie grâce à une recherche avancée, des filtres et des informations vérifiées.",
-    "cta": "Nous contacter"
-  },
   "projects": {
-    "title": "Projets",
-    "items": [
-      { "title": "E-Commerce", "description": "Boutique en ligne complète avec panier, paiements et gestion des stocks.", "image": "/assets/projects/ecommerce.png" },
-      { "title": "Tableaux de bord", "description": "Analyses et tableaux de bord éclairants.", "image": "/assets/projects/dashbord.png" },
-      { "title": "Job Hunt Diary", "description": "Suivez vos candidatures, au même endroit.", "link": "https://job-hunt-diary.vercel.app", "image": "/assets/projects/hunt.png" }
-    ]
+    "title": "Projets"
   },
   "teams": { "title": "Équipe" },
-  "technologies": { "title": "Technologies" },
+  "technologies": { "title": "Technologies", "subtitle": "La stack moderne que nous utilisons pour créer des produits fiables." },
   "partners": {
     "title": "Partenaires",
     "items": [
@@ -55,6 +46,7 @@
   },
   "trust": {
     "title": "Confiance & Vérification",
+    "subtitle": "Pourquoi les apprenants et les partenaires font confiance à FormationNet.",
     "items": [
       "Informations vérifiées",
       "Partenaires officiels",
@@ -64,6 +56,7 @@
   },
   "contact": {
     "title": "Contact",
+    "subtitle": "Parlez-nous de votre projet et nous vous répondrons rapidement.",
     "emailLabel": "Email :",
     "phoneLabel": "Téléphone :",
     "social": { "twitter": "Twitter", "linkedin": "LinkedIn", "github": "GitHub" }
@@ -87,6 +80,7 @@
   "ui": { "menu": "Menu", "appearance": "Apparence", "language": "Langue" },
   "findUs": {
     "title": "Nous trouver facilement",
+    "subtitle": "Contactez-nous ou rendez-nous visite — nous sommes là pour vous aider.",
     "addressLabel": "Adresse",
     "phoneLabel": "Téléphone",
     "contactLabel": "Contact"

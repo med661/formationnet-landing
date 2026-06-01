@@ -19,7 +19,7 @@ export default function HeroSection({ t }: { t: Translations }) {
         </h1>
         <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-8 text-[var(--muted)]">{t.hero.subtitle}</p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link href="#formationnet" className="group relative rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] px-8 py-3.5 text-sm font-semibold shadow-lg shadow-indigo-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none">
+          <Link href="#contact" className="group relative rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] px-8 py-3.5 text-sm font-semibold shadow-lg shadow-indigo-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] motion-reduce:transition-none">
             <span className="relative z-10">{t.hero.cta}</span>
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import SectionHeader from "@/components/SectionHeader";
 import { Translations } from "@/types/i18n";
 import { LuGlobe, LuSmartphone, LuCpu, LuCloud, LuBrain, LuPalette } from "react-icons/lu";
 
@@ -15,10 +16,8 @@ const serviceIcons = [
 export default function ServicesSection({ t }: { t: Translations }) {
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <Reveal>
-        <h2 className="text-2xl sm:text-3xl font-semibold">{t.services.title}</h2>
-      </Reveal>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+      <SectionHeader title={t.services.title} subtitle={t.services.subtitle} gradient />
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {t.services.items.map((s, i) => (
           <Reveal key={s.title} delay={i * 80}>
             <div className="group relative rounded-2xl border border-[var(--border)] p-6 bg-[var(--card)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl hover:shadow-indigo-500/10 motion-reduce:transition-none h-full flex flex-col overflow-hidden">

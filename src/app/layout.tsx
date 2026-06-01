@@ -6,6 +6,8 @@ import "./globals.css";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 import MobileNav from "@/components/MobileNav";
+import ScrollProgress from "@/components/ScrollProgress";
+import StickyContactCta from "@/components/StickyContactCta";
 import { getDict } from "@/i18n";
 import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -198,7 +200,8 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} antialiased min-h-screen bg-background text-foreground`}>        
+      <body className={`${inter.variable} antialiased min-h-screen bg-background text-foreground`}>
+        <ScrollProgress />
         <header className="fixed inset-x-0 top-0 z-50 bg-[var(--navbar-bg)] border-b border-[var(--navbar-border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
@@ -241,6 +244,7 @@ export default async function RootLayout({
         <main className="pt-16">
           {children}
         </main>
+        <StickyContactCta label={t.nav.contact} />
         <footer className="mt-24 border-t border-[var(--border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

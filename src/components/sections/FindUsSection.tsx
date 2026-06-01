@@ -1,14 +1,13 @@
 import Reveal from "@/components/Reveal";
+import SectionHeader from "@/components/SectionHeader";
 import { LuPhoneCall ,LuMail ,LuMapPin } from "react-icons/lu";
 import { Translations } from "@/types/i18n";
 
 export default function FindUsSection({ t }: { t: Translations }) {
   return (
     <section id="find-us" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <Reveal>
-        <h2 className="text-2xl sm:text-3xl font-semibold">{t.findUs.title}</h2>
-      </Reveal>
-      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+      <SectionHeader title={t.findUs.title} subtitle={t.findUs.subtitle} />
+      <div className="mt-12 grid gap-8 lg:grid-cols-2">
         <Reveal>
         <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6">
             <div>

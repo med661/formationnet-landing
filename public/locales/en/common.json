@@ -8,10 +8,12 @@
   },
   "about": {
     "title": "About",
+    "subtitle": "Your trusted gateway to professional training in Tunisia.",
     "body": "FormationNet is a digital platform designed to simplify access to private training centers in Tunisia. We help learners discover high-quality formations, compare options, and choose the right path for their professional development."
   },
   "services": {
     "title": "Services",
+    "subtitle": "End-to-end digital solutions, from idea to launch.",
     "items": [
       { "title": "Web Development", "description": "Modern, scalable web applications tailored to your business." },
       { "title": "Mobile App Development", "description": "Native and cross-platform apps that delight users." },
@@ -22,22 +24,11 @@
     ],
     "cta": "Learn More"
   },
-  "formationnet": {
-    "title": "Main Project",
-    "name": "FormationNet",
-    "description": "A digital platform that helps people find the right training opportunity based on their specific needs and objectives.",
-    "cta": "Contact us"
-  },
   "projects": {
-    "title": "Projects",
-    "items": [
-      { "title": "E-Commerce", "description": "Full-featured online store with cart, payments, and inventory management.", "image": "/assets/projects/ecommerce.png" },
-      { "title": "Dashboards", "description": "Insightful analytics and dashboards.", "image": "/assets/projects/dashbord.png" },
-      { "title": "Job Hunt Diary", "description": "Track applications and follow-ups in one place.", "link": "https://job-hunt-diary.vercel.app", "image": "/assets/projects/hunt.png" }
-    ]
+    "title": "Projects"
   },
   "teams": { "title": "Teams" },
-  "technologies": { "title": "Technologies" },
+  "technologies": { "title": "Technologies", "subtitle": "The modern stack we use to build reliable products." },
   "partners": {
     "title": "Partners",
     "items": [
@@ -55,6 +46,7 @@
   },
   "trust": {
     "title": "Trust & Verification",
+    "subtitle": "Why learners and partners rely on FormationNet.",
     "items": [
       "Verified information",
       "Official partners",
@@ -64,6 +56,7 @@
   },
   "contact": {
     "title": "Contact",
+    "subtitle": "Tell us about your project and we'll get back to you shortly.",
     "emailLabel": "Email:",
     "phoneLabel": "Phone:",
     "social": { "twitter": "Twitter", "linkedin": "LinkedIn", "github": "GitHub" }
@@ -87,6 +80,7 @@
   "ui": { "menu": "Menu", "appearance": "Appearance", "language": "Language" },
   "findUs": {
     "title": "Find us easily",
+    "subtitle": "Reach out or visit us — we're here to help.",
     "addressLabel": "Address",
     "phoneLabel": "Phone",
     "contactLabel": "Contact"
