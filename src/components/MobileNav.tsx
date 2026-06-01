@@ -4,7 +4,7 @@ import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 
-export default function MobileNav({ labels, panel }: { labels: { services: string; projects: string; about: string; contact: string; findUs: string }; panel: { menu: string; appearance: string; language: string } }) {
+export default function MobileNav({ labels, panel }: { labels: { services: string; about: string; contact: string; findUs: string }; panel: { menu: string; appearance: string; language: string } }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -69,7 +69,6 @@ export default function MobileNav({ labels, panel }: { labels: { services: strin
             <ul className="mt-4 grid gap-4 text-sm">
               <li><Link href="#about" onClick={close}>{labels.about}</Link></li>
               <li><Link href="#services" onClick={close}>{labels.services}</Link></li>
-              <li><Link href="#projects" onClick={close}>{labels.projects}</Link></li>
               <li><Link href="#find-us" onClick={close}>{labels.findUs}</Link></li>
               <li><Link href="#contact" onClick={close}>{labels.contact}</Link></li>
             </ul>

@@ -194,7 +194,7 @@ export default async function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "(() => { try { const params = new URLSearchParams(window.location.search); const q = (params.get('q')||'').toLowerCase(); const sent = params.get('sent'); if (sent === '1') { const ok = document.getElementById('contact-success'); if (ok) { ok.classList.remove('hidden'); } } if (!q) return; const map = [ { k: ['about'], id: '#about' }, { k: ['service','services'], id: '#services' }, { k: ['project','projects','formationnet','formation','training'], id: '#projects' }, { k: ['find','find-us','location','address'], id: '#find-us' }, { k: ['contact'], id: '#contact' } ]; const match = map.find(m => m.k.some(s => q.includes(s))); const target = match ? match.id : '#home'; const el = document.querySelector(target); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', target); } } catch {} })();",
+              "(() => { try { const params = new URLSearchParams(window.location.search); const q = (params.get('q')||'').toLowerCase(); const sent = params.get('sent'); if (sent === '1') { const ok = document.getElementById('contact-success'); if (ok) { ok.classList.remove('hidden'); } } if (!q) return; const map = [ { k: ['about'], id: '#about' }, { k: ['service','services'], id: '#services' }, { k: ['find','find-us','location','address'], id: '#find-us' }, { k: ['contact'], id: '#contact' } ]; const match = map.find(m => m.k.some(s => q.includes(s))); const target = match ? match.id : '#home'; const el = document.querySelector(target); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', target); } } catch {} })();",
           }}
         />
       </head>
@@ -206,13 +206,12 @@ export default async function RootLayout({
               <nav className="hidden gap-6 text-sm font-medium lg:flex" role="navigation" aria-label="Primary">
                 <Link href="#about" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.about}</Link>
                 <Link href="#services" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.services}</Link>
-                <Link href="#projects" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.projects}</Link>
                 <Link href="#find-us" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.findUs}</Link>
                 <Link href="#contact" className="nav-link text-[var(--navbar-link)] hover:text-[var(--navbar-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">{t.nav.contact}</Link>
               </nav>
               <div className="flex items-center gap-3">
                 <MobileNav
-                  labels={{ services: t.nav.services, projects: t.nav.projects, about: t.nav.about, contact: t.nav.contact, findUs: t.nav.findUs }}
+                  labels={{ services: t.nav.services, about: t.nav.about, contact: t.nav.contact, findUs: t.nav.findUs }}
                   panel={{ menu: t.ui.menu, appearance: t.ui.appearance, language: t.ui.language }}
                 />
                 <span className="hidden md:block lg:hidden">
@@ -254,7 +253,6 @@ export default async function RootLayout({
                   <p className="text-xs font-semibold tracking-wide text-[var(--muted)]">Site</p>
                   <ul className="mt-3 space-y-2 text-sm">
                     <li><Link href="#services" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.services}</Link></li>
-                    <li><Link href="#projects" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.projects}</Link></li>
                     <li><Link href="#about" className="nav-link text-[var(--navbar-link)] hover:text-[var(--accent)]">{t.nav.about}</Link></li>
                   </ul>
                 </div>
